@@ -5,24 +5,11 @@ import Login from "../components/Admin/Auth/Login";
 import Register from "../components/Admin/Auth/Register";
 import Dashboard from "../components/Admin/Dashboard/Dashboard";
 import AdminDash from "../components/Admin/Dashboard/Components/AdminDash";
+import publicRoutes from "./PublicRoutes";
+import privetRoutes from "./PrivetRoutes";
 
 
-const router = createBrowserRouter([
-    {
-        path : '/',
-        element : <Dashboard></Dashboard>,
-        children : [
-            {
-                path : '/',
-                element : <AdminDash></AdminDash>
-            },
-            {
-                path : 'register',
-                element : <Register></Register>
-            }
-        ]
-    }
-])
+const router = createBrowserRouter([...publicRoutes, ...privetRoutes])
 
 
 export default router

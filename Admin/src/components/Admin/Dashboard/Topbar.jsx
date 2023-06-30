@@ -2,10 +2,17 @@ import React from 'react'
 import { useState } from 'react'
 import Avatar from '../Profile/Avatar'
 import BlackLogo from '../../Logo/BloackLogo'
+import { useRef } from 'react'
+import useshowHideDrops from '../../../hooks/showHideDrops'
 
 const Topbar = () => {
 
+  const {isOpen, toggleMenu, dropRef} = useshowHideDrops()
+  const {isOpen:isNotification, toggleMenu:togoleNotification, dropRef:notificationRef} = useshowHideDrops()
+
+  const userMenu = useRef(null)
   const [dropDown, setDropDown] = useState(false)
+  const [showNotification, setShowNotification] = useState(false)
   return (
     <>
 
@@ -39,68 +46,69 @@ const Topbar = () => {
     {/* Header Right Menu */}
     <ul className="nav user-menu">
       {/* Notifications */}
-      <li className="nav-item dropdown noti-dropdown">
-        <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
+      <li className="nav-item dropdown noti-dropdown" onClick={togoleNotification} ref={notificationRef}>
+        <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown" 
+         >
           <i className="fe fe-bell" /> <span className="badge badge-pill">3</span>
         </a>
-        <div className="dropdown-menu notifications">
-          <div className="topnav-dropdown-header">
-            <span className="notification-title">Notifications</span>
-            <a href="javascript:void(0)" className="clear-noti"> Clear All </a>
-          </div>
-          <div className="noti-content">
-            <ul className="notification-list">
-              <li className="notification-message">
-                <a href="#">
-                  <div className="media">
-                    <span className="avatar avatar-sm">
-                     
-                    <Avatar clist={'avatar-img rounded-circle'} alt={'User Image'}></Avatar>
-                    
-                    </span>
-                    <div className="media-body">
-                      <p className="noti-details"><span className="noti-title">Dr. Ruby Perrin</span> Schedule <span className="noti-title">her appointment</span></p>
-                      <p className="noti-time"><span className="notification-time">4 mins ago</span></p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="#">
-                  <div className="media">
-                    <span className="avatar avatar-sm">
-                      <img className="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient1.jpg" />
-                    </span>
-                    <div className="media-body">
-                      <p className="noti-details"><span className="noti-title">Charlene Reed</span> has booked her appointment to <span className="noti-title">Dr. Ruby Perrin</span></p>
-                      <p className="noti-time"><span className="notification-time">6 mins ago</span></p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="topnav-dropdown-footer">
-            <a href="#">View all Notifications</a>
-          </div>
+       {
+        isNotification &&  <div style={{left : '-280px'}} className="dropdown-menu notifications show">
+        <div className="topnav-dropdown-header">
+          <span className="notification-title">Notifications</span>
+          <a href="javascript:void(0)" className="clear-noti"> Clear All </a>
         </div>
+        <div className="noti-content">
+          <ul className="notification-list">
+            <li className="notification-message">
+              <a href="#">
+                <div className="media">
+                  <span className="avatar avatar-sm">
+                   
+                  <Avatar clist={'avatar-img rounded-circle'} alt={'User Image'}></Avatar>
+                  
+                  </span>
+                  <div className="media-body">
+                    <p className="noti-details"><span className="noti-title">Dr. Ruby Perrin</span> Schedule <span className="noti-title">her appointment</span></p>
+                    <p className="noti-time"><span className="notification-time">4 mins ago</span></p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li className="notification-message">
+              <a href="#">
+                <div className="media">
+                  <span className="avatar avatar-sm">
+                    <img className="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient1.jpg" />
+                  </span>
+                  <div className="media-body">
+                    <p className="noti-details"><span className="noti-title">Charlene Reed</span> has booked her appointment to <span className="noti-title">Dr. Ruby Perrin</span></p>
+                    <p className="noti-time"><span className="notification-time">6 mins ago</span></p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="topnav-dropdown-footer">
+          <a href="#">View all Notifications</a>
+        </div>
+      </div>
+       }
       </li>
       {/* /Notifications */}
 
 
       {/* User Menu */}
-      <li className="nav-item dropdown has-arrow">
-        <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown" onClick={() => setDropDown(!dropDown)}>
-          <span className="user-img">
-
-         
+      <li className="nav-item dropdown has-arrow"  ref={dropRef}>
+        <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown" onClick={toggleMenu}>
+          <span className="user-img">        
             
             <Avatar style={{width : '31px', height : '31px', objectFit : 'cover'}} clist={'rounded-circle'}></Avatar>
             </span>
         </a>
 
         {
-          dropDown && <div style={{left : '-100px'}} className={ dropDown ? "dropdown-menu  show" : 'dropdown-menu'}>
+          isOpen && <div style={{left : '-150px'}} className={ isOpen ? "dropdown-menu  show" : 'dropdown-menu'}>
           <div className="user-header">
             <div className="avatar avatar-sm">
               <Avatar clist={'avatar-img rounded-circle'}/>

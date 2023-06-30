@@ -19,7 +19,7 @@ const Sidebar = () => {
             <Link to="/"><i className="fe fe-home" /> <span>Dashboard</span></Link>
           </li>
           <li> 
-            <Link to="/"><i className="fe fe-users" /> <span>Users</span></Link>
+            <Link to="/user"><i className="fe fe-users" /> <span>Users</span></Link>
           </li>
           
         </ul>

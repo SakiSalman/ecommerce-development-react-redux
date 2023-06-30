@@ -49,7 +49,7 @@ const Register = () => {
               <a href="#" className="facebook"><i className="fa fa-facebook" /></a><a href="#" className="google"><i className="fa fa-google" /></a>
             </div>
             {/* /Social Login */}
-            <div className="text-center dont-have">Already have an account? <Link to="/">Login</Link></div>
+            <div className="text-center dont-have">Already have an account? <Link to="/login">Login</Link></div>
           </div>
         </div>
       </div>

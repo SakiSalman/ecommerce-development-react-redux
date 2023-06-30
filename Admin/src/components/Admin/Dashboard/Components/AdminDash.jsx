@@ -17,7 +17,9 @@ const AdminDash = () => {
           </div>
         </div>
       </div>
+
       {/* /Page Header */}
+
       <div className="row">
         <div className="col-xl-3 col-sm-6 col-12">
           <div className="card">
@@ -100,6 +102,7 @@ const AdminDash = () => {
           </div>
         </div>
       </div>
+
       <div className="row">
         <div className="col-md-12 col-lg-6">
           {/* Sales Chart */}
@@ -126,6 +129,7 @@ const AdminDash = () => {
           {/* /Invoice Chart */}
         </div>	
       </div>
+
       <div className="row">
         <div className="col-md-6 d-flex">
           {/* Recent Orders */}
@@ -213,6 +217,7 @@ const AdminDash = () => {
           {/* /Feed Activity */}
         </div>
       </div>
+      
       <div className="row">
         <div className="col-md-12">
           {/* Recent Orders */}

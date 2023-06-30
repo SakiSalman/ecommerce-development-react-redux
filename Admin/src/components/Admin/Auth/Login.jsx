@@ -30,7 +30,7 @@ const Login = () => {
               </div>
             </form>
             {/* /Form */}
-            <div className="text-center forgotpass"><a href="forgot-password.html">Forgot Password?</a></div>
+            <div className="text-center forgotpass"><Link to="/forgot-password" href="forgot-password.html">Forgot Password?</Link></div>
             <div className="login-or">
               <span className="or-line" />
               <span className="span-or">or</span>
