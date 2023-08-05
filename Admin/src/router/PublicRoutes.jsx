@@ -3,6 +3,7 @@ import Login from "../components/Admin/Auth/Login"
 import Register from "../components/Admin/Auth/Register"
 import AdminDash from "../components/Admin/Dashboard/Components/AdminDash"
 import Dashboard from "../components/Admin/Dashboard/Dashboard"
+import Users from "../pages/users/Users"
 
 
 const publicRoutes = [
@@ -14,6 +15,10 @@ const publicRoutes = [
             {
                 path : '/',
                 element : <AdminDash></AdminDash>
+            },
+            {
+                path : '/users',
+                element : <Users></Users>
             }
         ]
     },

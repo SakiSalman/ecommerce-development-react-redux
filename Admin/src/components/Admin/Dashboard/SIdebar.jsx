@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -19,7 +19,7 @@ const Sidebar = () => {
             <Link to="/"><i className="fe fe-home" /> <span>Dashboard</span></Link>
           </li>
           <li> 
-            <Link to="/user"><i className="fe fe-users" /> <span>Users</span></Link>
+            <NavLink to="/users"><i className="fe fe-users" /> <span>Users</span></NavLink>
           </li>
           
         </ul>

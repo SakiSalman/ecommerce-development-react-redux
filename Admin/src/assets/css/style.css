@@ -4141,3 +4141,11 @@ table.table-inbox tbody tr.checked {
 		display: none;
 	}
 }
+
+div.dataTables_paginate {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+}

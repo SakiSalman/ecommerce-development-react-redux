@@ -47,7 +47,7 @@ const Topbar = () => {
     <ul className="nav user-menu">
       {/* Notifications */}
       <li className="nav-item dropdown noti-dropdown" onClick={togoleNotification} ref={notificationRef}>
-        <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown" 
+        <a href="#" className="dropdown-toggle nav-link" 
          >
           <i className="fe fe-bell" /> <span className="badge badge-pill">3</span>
         </a>
@@ -100,7 +100,9 @@ const Topbar = () => {
 
       {/* User Menu */}
       <li className="nav-item dropdown has-arrow"  ref={dropRef}>
-        <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown" onClick={toggleMenu}>
+        <a href="#" className="dropdown-toggle nav-link"
+        //  data-toggle="dropdown" 
+         onClick={toggleMenu}>
           <span className="user-img">        
             
             <Avatar style={{width : '31px', height : '31px', objectFit : 'cover'}} clist={'rounded-circle'}></Avatar>

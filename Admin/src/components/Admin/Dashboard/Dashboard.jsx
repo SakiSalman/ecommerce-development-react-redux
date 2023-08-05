@@ -18,7 +18,7 @@ const Dashboard = () => {
         {/* Side Bar end */}
 
         {/* Page Wrapper */}
-        <div className="page-wrapper">
+        <div className="page-wrapper page">
           <Outlet></Outlet>
         </div>
         {/* /Page Wrapper */}

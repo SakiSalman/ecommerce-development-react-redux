@@ -6,6 +6,7 @@ import  './assets/css/select2.min.css'
 import  './assets/css/style.css'
 import { RouterProvider } from 'react-router-dom'
 import router from './router/router'
+import './assets/plugins/datatables/datatables.min.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
