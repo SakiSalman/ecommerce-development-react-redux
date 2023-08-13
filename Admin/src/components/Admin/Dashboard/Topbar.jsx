@@ -4,15 +4,18 @@ import Avatar from '../Profile/Avatar'
 import BlackLogo from '../../Logo/BloackLogo'
 import { useRef } from 'react'
 import useshowHideDrops from '../../../hooks/showHideDrops'
+import useAuthUser from '../../../hooks/useAuthUser'
 
 const Topbar = () => {
-
+  const {user} = useAuthUser()
   const {isOpen, toggleMenu, dropRef} = useshowHideDrops()
   const {isOpen:isNotification, toggleMenu:togoleNotification, dropRef:notificationRef} = useshowHideDrops()
 
   const userMenu = useRef(null)
   const [dropDown, setDropDown] = useState(false)
   const [showNotification, setShowNotification] = useState(false)
+
+  console.log(user);
   return (
     <>
 
